@@ -29,13 +29,21 @@ body {
  overflow: hidden; /* contain objects "on-screen" */
 }
 
+#ball {
+width: 10px;
+height: 10px;
+background-color: orange;
+border-radius:50%;
+animation: move 2s infinite linear;
+}
+
 #man1 {
 width: 100px;
 height: 130px;
 background: url(Man1_Down.png);
 background-size: contain;
 background-repeat: no-repeat;
-/*animation: changing-image 3s infinite linear; */
+animation: changing-image 1.5s infinite linear;
 
 position: absolute;
 top: 330px;
@@ -49,17 +57,56 @@ height: 130px;
 background: url(Man2_Down.png);
 background-size: contain;
 background-repeat: no-repeat;
-/*animation: changing-image 3s infinite linear; */
+animation: changing-image2 1.5s infinite linear; 
 
 position: absolute;
-top: 330px;
+top: 350px;
 left: 220px;
 z-index: 20;
 }
 
+@keyframes move {
+    0% { transform: translate(250px, 200px); }
+    25% { transform: translate(340px, 180px); }
+    50% { transform: translate(430px, 200px); }
+    75% { transform: translate(340px, 180px); }
+    100% { transform: translate(250px, 200px); }
+}
+
 @keyframes changing-image {
-    0% {background: url(Man1_Down.png); }
-    50% {background: url(Man1_Up.png); }
-    100% {background: url(Man1_Down.png); }
+    0% {
+        background: url(Man1_Down.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+     }
+    50% {
+        background: url(Man1_Up.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    
+     }
+    100% {
+        background: url(Man1_Down.png); 
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
+
+@keyframes changing-image2 {
+    0% {
+        background: url(Man2_Down.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+     }
+    50% {
+        background: url(Man2_Up.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+     }
+    100% {
+        background: url(Man2_Down.png); 
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
 }
 
